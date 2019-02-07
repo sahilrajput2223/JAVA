@@ -22,11 +22,11 @@
 	</tr>
 	
 	<tr>
-		<td>Sahil</td>
-		<td>Rajput</td>
+		<td>TEST</td>
+		<td>TEST</td>
 		<td>20</td>
-		<td>7359880845</td>
-		<td>rajputsahil.2204@gmail.com</td>
+		<td>1234567890</td>
+		<td>TEST@gmail.com</td>
 		<td>22/04/1999</td>
 		<td>male</td>
 		<td>game,music,code</td>
