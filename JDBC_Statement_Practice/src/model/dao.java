@@ -1,7 +1,8 @@
 package model;
 
 import java.sql.Connection;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import Controller.UserBean;
@@ -37,18 +38,37 @@ final public class dao {
 			e.printStackTrace();
 		}
 		
-		
-		
 		return 0;
 	}
 	
+	public ResultSet selectUser() {
+		Statement st;
+		ResultSet rs = null;
+		
+		try {
+			st = conn.createStatement();
+		 rs = st.executeQuery("SELECT * FROM form");
+			return rs;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return rs; 
+	}
 	
 	public String makeString(String[] A) {
 		
 		 String str[] = A;
 		 String sum = "";
 		 for(int i = 0 ; i<str.length ; i++) {
-			 sum += str[i] + ",";
+			
+			 if (i == str.length - 1) {
+				sum += str[i];
+			} else {
+				sum += str[i] + ",";
+			}
+			 
 		 }
 		
 		return sum;

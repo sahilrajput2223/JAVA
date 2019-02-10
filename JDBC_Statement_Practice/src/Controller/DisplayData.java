@@ -29,6 +29,8 @@ public class DisplayData extends HttpServlet {
 		String hobbie[] = request.getParameterValues("hobbie");
 		String language[] = request.getParameterValues("language");
 		
+		
+		
 		String hobbies = d.makeString(hobbie);
 		String languages = d.makeString(language);
 		
