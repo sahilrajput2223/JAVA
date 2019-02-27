@@ -1,3 +1,5 @@
+
+<%@page import="javax.swing.text.AbstractDocument.Content"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="model.dao"  %>
 
@@ -28,7 +30,7 @@
 		<th>Gender</th>
 		<th>Hobbies</th>
 		<th>Languages Know</th>
-		<!-- <th>Action</th> -->
+		<th>Edit Data</th>
 	</tr>
 	
 
@@ -36,7 +38,7 @@
 		<%
 			dao d = new dao();
 			ResultSet rs = d.selectUser();
-	
+			
 			while(rs.next()){	
 		%>
 		
@@ -51,10 +53,16 @@
 		<td><%= rs.getString(8) %></td>
 		<td><%= rs.getString(9) %></td>
 		<td><%= rs.getString(10) %></td>
-		<!-- <td>DELETE</td> -->
+		<td> <form action="EditForm.jsp" method="POST" > 
+				<input type="hidden" name="getIdFromTable" value="<%= rs.getShort("id") %>" >
+			 	
+			 	<button>Edit</button> 
+			 </form>
+		</td>
 	</tr>
 	
-	<%} %>
+	<%}
+	%>
 </table>
 </body>
 </html>

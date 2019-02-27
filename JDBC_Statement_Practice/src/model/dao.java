@@ -1,9 +1,11 @@
 package model;
 
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 
 import Controller.UserBean;
 
@@ -12,6 +14,7 @@ final public class dao {
 	
 	Connection conn = DbConnection.getConnection();
 	//to get connection
+	
 	public int insert(UserBean ub)
 	{
 		int num ;
@@ -41,13 +44,14 @@ final public class dao {
 		return 0;
 	}
 	
+	
 	public ResultSet selectUser() {
 		Statement st;
 		ResultSet rs = null;
 		
 		try {
 			st = conn.createStatement();
-		 rs = st.executeQuery("SELECT * FROM form");
+			rs = st.executeQuery("SELECT * FROM form");
 			return rs;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -56,6 +60,26 @@ final public class dao {
 		
 		return rs; 
 	}
+	
+	
+	public ResultSet selectbyId(int uid) {
+		Statement st;
+		ResultSet rs = null;
+		int user_id = uid;
+		
+			try {
+				st = conn.createStatement();
+				rs = st.executeQuery("SELECT * FROM form WHERE id =" + user_id);
+				return rs;
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return rs;
+	}
+	
 	
 	public String makeString(String[] A) {
 		
@@ -73,4 +97,23 @@ final public class dao {
 		
 		return sum;
 	}
+	
+	
+	public int update(UserBean ub) {
+		int count = 0;
+		Statement st;
+		try {
+			st = conn.createStatement();
+			count = st.executeUpdate("UPDATE form SET Fname='"+ub.getFname()+"',Lname='"+ub.getLname()+"',Age='"+ub.getAge()+"',Phone='"+ub.getPhone()+"',Email='"+ub.getEmail()+"',Birthdate='"+ub.getBirthdate()+"',Gender='"+ub.getGender()+"',Hobbie='"+ub.getHobbie()+"',Language='"+ub.getLanguang()+"' WHERE id='"+ub.getId()+"'");
+			return count;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return count;
+	}
+	
+	
 }
+	

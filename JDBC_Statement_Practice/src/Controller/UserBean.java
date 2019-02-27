@@ -4,6 +4,7 @@ package Controller;
 
 final public class UserBean {
 
+	private int id;
 	private String fname;
 	private String lname;
 	private int age;
@@ -14,6 +15,12 @@ final public class UserBean {
 	private String hobbie;
 	private String languang;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getFname() {
 		return fname;
