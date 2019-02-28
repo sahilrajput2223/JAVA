@@ -12,9 +12,10 @@ import Controller.UserBean;
 final public class dao {
 	
 	
-	Connection conn = DbConnection.getConnection();
-	//to get connection
+	Connection conn = DbConnection.getConnection();//to get connection
 	
+	
+	// this is used for insert in database
 	public int insert(UserBean ub)
 	{
 		int num ;
@@ -33,7 +34,7 @@ final public class dao {
 			st = conn.createStatement();
 			num = st.executeUpdate("INSERT INTO form(Fname,Lname,Age, Phone, Email,Birthdate,Gender, Hobbie, Language) VALUES ('"+fname+"','"+lname+"',"+age+","+phone+",'"+email+"','"+birthdate+"','"+gender+"','"+hobbie+"','"+language+"')");
 			
-			DbConnection.closeConnection();
+			
 			//For Connection close
 			return num;
 		} catch (Exception e) {
@@ -45,6 +46,7 @@ final public class dao {
 	}
 	
 	
+	//this is used for get all users from database
 	public ResultSet selectUser() {
 		Statement st;
 		ResultSet rs = null;
@@ -52,7 +54,9 @@ final public class dao {
 		try {
 			st = conn.createStatement();
 			rs = st.executeQuery("SELECT * FROM form");
+			
 			return rs;
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -62,6 +66,7 @@ final public class dao {
 	}
 	
 	
+	//this is used for get particular user according to id
 	public ResultSet selectbyId(int uid) {
 		Statement st;
 		ResultSet rs = null;
@@ -70,6 +75,7 @@ final public class dao {
 			try {
 				st = conn.createStatement();
 				rs = st.executeQuery("SELECT * FROM form WHERE id =" + user_id);
+				
 				return rs;
 				
 			} catch (SQLException e) {
@@ -81,6 +87,7 @@ final public class dao {
 	}
 	
 	
+	//this function is used for make string from string array in checkbox logic
 	public String makeString(String[] A) {
 		
 		 String str[] = A;
@@ -99,6 +106,7 @@ final public class dao {
 	}
 	
 	
+	//this is used to rum update data logic
 	public int update(UserBean ub) {
 		int count = 0;
 		Statement st;
@@ -110,6 +118,24 @@ final public class dao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return count;
+	}
+	
+	
+	//this logic is used to rum delete user or data 
+	public int delete(UserBean ub) {
+		int count = 0;
+		Statement st;
+		
+		try {
+			st = conn.createStatement();
+			count = st.executeUpdate("DELETE FROM form WHERE id ="+ub.getId());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		return count;
 	}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2019 at 05:54 PM
+-- Generation Time: Feb 28, 2019 at 03:20 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -46,11 +46,12 @@ CREATE TABLE `form` (
 --
 
 INSERT INTO `form` (`id`, `Fname`, `Lname`, `Age`, `Phone`, `Email`, `Birthdate`, `Gender`, `Hobbie`, `Language`) VALUES
-(3, 'test1', 'test1', 1, 1111111111, 'test1@gmail.com', '1111-11-11', 'male', 'Games,Coding,Music,Painting,', 'php,asp.net,python,java,android,'),
-(4, 'Test2', 'Test2', 22, 2222222222, 'Test2@gmail.com', '2019-02-22', 'male', 'Games,Music,', 'php,python,android,'),
-(6, 'Test3', 'Test3', 33, 3333333333, 'Test3@gmail.com', '2019-03-31', 'female', 'Games,Coding,Music,', 'php,asp.net,java,android,'),
-(7, 'test4', 'test4', 4, 4444444444, 'Test4@gmail.com', '2018-03-12', 'male', 'Games,Coding,Painting,', 'php,java,android,'),
-(8, 'test5', 'test5', 5, 5555555555, 'Test5@gmail.com', '2017-12-08', 'male', 'Games,Coding,Music,Painting', 'php,asp.net,python,java,android');
+(1, 'temp0', 'temp0', 10, 1111100000, 'temp0@gmail.com', '1010-10-10', 'male', 'Games,Coding,Music,Painting', 'php,asp.net,python,java,android'),
+(2, 'temp1', 'temp1', 11, 1111111111, 'temp1@gmail.com', '1111-11-11', 'male', 'Games,Music', 'php,python,android'),
+(3, 'temp2', 'temp2', 22, 2222222222, 'temp2@gmail.com', '2222-02-22', 'male', 'Coding,Painting', 'asp.net,java'),
+(4, 'temp3', 'temp3', 33, 3333333333, 'temp3@gmail.com', '2017-02-13', 'male', 'Coding,Music,Painting', 'asp.net,python,java'),
+(5, 'temp4', 'temp4', 44, 4444444444, 'temp4@gmail.com', '2015-04-14', 'female', 'Games,Coding,Music', 'php,asp.net,java'),
+(7, 'temp5', 'temp5', 22, 5555555555, 'test5@gmail.com', '2017-12-26', 'male', 'Coding,Music', 'php,asp.net,java');
 
 --
 -- Indexes for dumped tables
@@ -70,7 +71,7 @@ ALTER TABLE `form`
 -- AUTO_INCREMENT for table `form`
 --
 ALTER TABLE `form`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

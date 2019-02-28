@@ -53,7 +53,7 @@ public class DisplayData extends HttpServlet {
 		int num = d.insert(ub);
 		
 		if (num > 0 ) {
-			pf.println("Data Insert Done");
+			response.sendRedirect("table.jsp");
 		} else {
 			pf.println("Data Not Inserted");
 		}
