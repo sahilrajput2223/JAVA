@@ -1,4 +1,4 @@
-
+<!--  in this page all the data from the DataBase is displayed  -->
 <%@page import="javax.swing.text.AbstractDocument.Content"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="model.dao"  %>
@@ -58,11 +58,20 @@
 			 	
 			 	<button>Edit</button> 
 			 </form>
+			 <form action="DeleteData" method="POST" > 
+				<input type="hidden" name="getIdFromTableToDelete" value="<%= rs.getShort("id") %>" >
+			 	
+			 	<button>Delete</button> 
+			 </form>
 		</td>
 	</tr>
 	
-	<%}
+	<%
+		}
+		rs.close();
 	%>
 </table>
+
+<a href="./form.jsp" >Back To Form Page</a>
 </body>
 </html>

@@ -1,3 +1,5 @@
+<!--  in this page, you can add your data in database -->
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -13,7 +15,7 @@
  	fieldset{
  	margin-top: 2%;
  	margin-left: 35%;
- 	height: 400px;
+ 	height: 410px;
  	padding: 20px;
  	width: 275px;
  	}
@@ -90,9 +92,12 @@
 			<tr>
 			 <td colspan="2" > <button title="Click To Submit" style="background-color: green; border: 1px solid green;" name="btnSubmit" >Submit</button> </td>
 			</tr>
-			 	
+			<tr>
+			<td><a href="./table.jsp" >View All Data</a></td>
+			</tr>		 	
 		</table>
 	</fieldset>
+	
 </form>
 </body>
 </html>

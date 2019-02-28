@@ -1,3 +1,5 @@
+/** this class is used for set or get data from object */
+
 package Controller;
 
 

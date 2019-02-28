@@ -1,3 +1,5 @@
+/** data update page (servlet) */
+
 package Controller;
 
 import model.dao; 
@@ -59,7 +61,8 @@ public class EditData extends HttpServlet {
 			int num = d.update(ub);
 			
 			if (num > 0 ) {
-				pf.println("Data Updated Done");
+				/* once data is updated then page is redirected to the table.jsp page*/
+				response.sendRedirect("table.jsp");
 			} else {
 				pf.println("Data Not Updated");
 			}
